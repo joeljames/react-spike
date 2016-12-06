@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import LikeComponent from './components/LikeComponent.jsx';
+import LikeComponent from './components/like-component.jsx';
 
 class App extends React.Component {
   render () {
@@ -12,6 +12,5 @@ class App extends React.Component {
     );
   }
 }
-
 
 render(<App/>, document.getElementById('app'));
