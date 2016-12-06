@@ -8,5 +8,3 @@ Now Setup your webpack.config.js
 Setting up bable-loader
 
 index.jsx -> Webpack (Babel Loader) -> index.js
-
-

@@ -6,7 +6,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <p> Hello React!</p>
+        <p> Team Tesla is awesome!</p>
         <LikeComponent />
       </div>
     );
