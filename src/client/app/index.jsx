@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import LikeComponent from './LikeComponent.jsx';
+import LikeComponent from './components/LikeComponent.jsx';
 
 class App extends React.Component {
   render () {
