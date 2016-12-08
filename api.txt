@@ -8,3 +8,6 @@ Now Setup your webpack.config.js
 Setting up bable-loader
 
 index.jsx -> Webpack (Babel Loader) -> index.js
+
+
+Create a Fake API link http://localhost:3000/public/fake-api.json
