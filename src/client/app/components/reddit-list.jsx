@@ -1,9 +1,12 @@
 import React from 'react';
 import axios from 'axios';
+import { Button } from 'react-bootstrap';
 
 class RedditListComponent extends React.Component {
   constructor(props) {
     super(props);
+    this.renderPosts = this.renderPosts.bind(this);
+
     this.state = {
       posts: [],
       loading: true,
@@ -61,6 +64,9 @@ class RedditListComponent extends React.Component {
       <div>
         <h1>Reddit Topic List for {`${this.props.subreddit}`}</h1>
         {this.state.loading ? this.renderLoading() : this.renderPosts()}
+        <div>
+          <Button bsStyle="primary" bsSize="small" onClick={this.renderPosts}>Reload Post</Button>
+        </div>
       </div>
     );
   }

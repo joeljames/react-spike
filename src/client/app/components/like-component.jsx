@@ -24,7 +24,7 @@ class LikeComponent extends React.Component {
   render() {
     return (
       <div>
-        Likes : <span>{this.state.likesCount}</span>
+        Likes: <span>{this.state.likesCount}</span>
         <div>
           <Button bsStyle="primary" bsSize="small" onClick={this.onLike}>Like</Button>
           &nbsp;
