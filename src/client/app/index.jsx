@@ -9,8 +9,10 @@ class App extends React.Component {
     return (
       <div>
         <NavComponent />
+        <h1> Example 1</h1>
         <p> Team Tesla is awesome!</p>
         <LikeComponent />
+        <h1> Example 2</h1>
         <RedditListComponent subreddit="reactjs"/>
       </div>
     );

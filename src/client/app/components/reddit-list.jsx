@@ -5,8 +5,7 @@ import { Button } from 'react-bootstrap';
 class RedditListComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.renderPosts = this.renderPosts.bind(this);
-
+    this.reloadPosts = this.reloadPosts.bind(this);
     this.state = {
       posts: [],
       loading: true,
@@ -19,9 +18,9 @@ class RedditListComponent extends React.Component {
     return axios.get(`${baseURL}/${this.props.subreddit}.json`);
   }
 
-  componentDidMount() {
+  setPosts() {
     this.getSubreddits()
-      .then(res => {
+      .then((res) => {
         const posts = res.data.data.children.map(obj => obj.data);
         this.setState({
           posts,
@@ -29,13 +28,17 @@ class RedditListComponent extends React.Component {
           error: null
         });
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
         this.setState({
           loading: false,
           error: err
         });
       });
+  }
+
+  componentDidMount() {
+    this.setPosts()
   }
 
   renderLoading() {
@@ -59,13 +62,23 @@ class RedditListComponent extends React.Component {
     );
   }
 
+  reloadPosts() {
+    this.setState({
+      posts: [],
+      loading: true,
+      error: null
+    });
+    this.setPosts()
+    this.renderPosts();
+  }
+
   render() {
     return (
       <div>
-        <h1>Reddit Topic List for {`${this.props.subreddit}`}</h1>
+        <h2>Reddit Topic List for {`${this.props.subreddit}`}</h2>
         {this.state.loading ? this.renderLoading() : this.renderPosts()}
         <div>
-          <Button bsStyle="primary" bsSize="small" onClick={this.renderPosts}>Reload Post</Button>
+          <Button bsStyle="primary" bsSize="small" onClick={this.reloadPosts}>Reload Post</Button>
         </div>
       </div>
     );
