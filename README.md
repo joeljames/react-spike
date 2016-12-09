@@ -28,8 +28,8 @@ npm run start
 ### Project Structure
 
 - package.json - dependencies and build commands
-- src/client/index.html - main HTML
-- src/client/public/bundle.js - contains compiled js
+- public/index.html - main HTML
+- public/bundle.js - contains compiled js
 - webpack.config.js - contains the configuration for webpack
 
 
