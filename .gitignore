@@ -28,5 +28,7 @@ chrome-user-data
 *.iml
 .vscode
 
-##
-src/client/public/*
+## Project
+/public/*.js
+/public/*.js.*
+
