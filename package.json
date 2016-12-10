@@ -4,7 +4,7 @@
   "description": "A Spike to setup and get started with react application.",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint src",
+    "lint": "eslint src --ext .jsx",
     "build:dev": "webpack -d --watch",
     "build:production": "webpack -p",
     "start": "concurrently \"nodemon src/server.js --exec babel-node\" \"npm run build:dev\"",
