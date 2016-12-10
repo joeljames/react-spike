@@ -38,7 +38,7 @@ class RedditListComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.setPosts()
+    this.setPosts();
   }
 
   renderLoading() {
@@ -68,7 +68,7 @@ class RedditListComponent extends React.Component {
       loading: true,
       error: null
     });
-    this.setPosts()
+    this.setPosts();
     this.renderPosts();
   }
 

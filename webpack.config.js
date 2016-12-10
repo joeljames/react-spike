@@ -1,18 +1,31 @@
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require('webpack');
+const path = require('path');
 
 
-var APP_DIR = path.resolve(__dirname, 'src');
-var BUILD_DIR = path.resolve(__dirname, 'public');
+const APP_DIR = path.resolve(__dirname, 'src');
+const BUILD_DIR = path.resolve(__dirname, 'public');
+const ESLINT_CONFIG_FILE = path.join(__dirname, '.eslintrc');
 
 
-var config = {
+const config = {
+  eslint: {
+    configFile: ESLINT_CONFIG_FILE
+  },
   entry: APP_DIR + '/index.jsx',
   output: {
       path: BUILD_DIR,
       filename: 'bundle.js'
   },
   module : {
+    preLoaders: [
+      {
+        test: /\.jsx$/,
+        include: [
+          APP_DIR
+        ],
+        loader: 'eslint-loader'
+      }
+    ],
     loaders : [
       {
         test : /\.jsx?/,

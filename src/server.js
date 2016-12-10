@@ -11,4 +11,4 @@ app.use('/', express.static(path.join(__dirname, '../public')));
 
 app.listen(config.PORT, () => {
   console.log('The server has started on http://localhost:' + config.PORT + '/');
-})
+});
