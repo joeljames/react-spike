@@ -1,5 +1,5 @@
 # react-spike
-Simple react app demonstration setting up of react app with NPM, Bable and Webpack. You must have Node installed locally to get this app up and running.
+Simple react app demonstration setting up of react app with NPM, Bable and Webpack. First you'll need [Node](https://nodejs.org/en/) and the package manager that comes with it:[npm](https://www.npmjs.com/).
 
 ### Getting Started
 

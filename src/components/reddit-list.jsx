@@ -15,7 +15,7 @@ class RedditListComponent extends React.Component {
 
   getSubreddits() {
     const baseURL = 'http://www.reddit.com/r';
-    return axios.get(`${baseURL}/${this.props.subreddit}.json`);
+    return axios.get(`${baseURL}/reactjs.json`);
   }
 
   setPosts() {
@@ -75,7 +75,7 @@ class RedditListComponent extends React.Component {
   render() {
     return (
       <div>
-        <h2>Reddit Topic List for {`${this.props.subreddit}`}</h2>
+        <h2>Reddit Topic List for Reactjs</h2>
         {this.state.loading ? this.renderLoading() : this.renderPosts()}
         <div>
           <Button bsStyle="primary" bsSize="small" onClick={this.reloadPosts}>Reload Post</Button>
