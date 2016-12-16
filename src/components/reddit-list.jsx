@@ -2,10 +2,19 @@ import React from 'react';
 import axios from 'axios';
 import { Button } from 'react-bootstrap';
 
+/*
+Example which fetches a list of item from REST API and
+renders if on the screen.
+Also, logs and renders the error message if any error occurs in the
+REST API call.
+*/
+
 class RedditListComponent extends React.Component {
   constructor(props) {
     super(props);
     this.reloadPosts = this.reloadPosts.bind(this);
+    // Set the initial state. You can also set the initial state in the
+    // setState mentod.
     this.state = {
       posts: [],
       loading: true,
@@ -15,7 +24,7 @@ class RedditListComponent extends React.Component {
 
   getSubreddits() {
     const baseURL = 'http://www.reddit.com/r';
-    return axios.get(`${baseURL}/reactjs.json`);
+    return axios.get(`${baseURL}/reactjs.json`); //Using the axios lib to call the REST endpoint
   }
 
   setPosts() {
@@ -38,6 +47,8 @@ class RedditListComponent extends React.Component {
   }
 
   componentDidMount() {
+    // This method is invoked immediately before mounting occurs.
+    // It is called before render().
     this.setPosts();
   }
 
@@ -73,6 +84,8 @@ class RedditListComponent extends React.Component {
   }
 
   render() {
+    // The render() method is required.
+    // When called, it should examine this.props and this.state and return a single React element
     return (
       <div>
         <h2>Reddit Topic List for Reactjs</h2>
